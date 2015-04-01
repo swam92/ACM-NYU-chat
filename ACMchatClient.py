@@ -2,18 +2,20 @@
 import socket, select, string, sys
  
 def prompt() :
-    sys.stdout.write('<AcM Member> ')
+    this = 'acm_member_' + alias + ' >'
+    sys.stdout.write(this)
     sys.stdout.flush()
  
 
 if __name__ == "__main__":
      
     if(len(sys.argv) < 3) :
-        print 'Usage : python ACMchatClient.py hostname port'
+        print 'Usage : python ACMchatClient.py hostname port alias'
         sys.exit()
      
     host = sys.argv[1]
     port = int(sys.argv[2])
+    alias = sys.argv[3]
      
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     s.settimeout(2)
