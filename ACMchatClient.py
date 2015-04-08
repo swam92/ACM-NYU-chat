@@ -1,8 +1,9 @@
 
-import socket, select, string, sys
+import socket, select, string, sys, datetime
  
 def prompt() :
-    this = 'acm_member_' + alias + ' >'
+    st = datetime.datetime.fromtimestamp(ts).strftime('%Y-%m-%d %H:%M:%S')
+    this = 'acm_member_' + st + alias + ' >'
     sys.stdout.write(this)
     sys.stdout.flush()
  
